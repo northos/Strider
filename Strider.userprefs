@@ -1,0 +1,21 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DummyBug.cs">
+    <Files>
+      <File FileName="Assets\Scripts\BugMovement.cs" Line="81" Column="3" />
+      <File FileName="Assets\Scripts\DummyBug.cs" Line="30" Column="18" />
+      <File FileName="Assets\Scripts\Bubble.cs" Line="8" Column="2" />
+      <File FileName="Assets\Scripts\SceneTransition.cs" Line="10" Column="22" />
+      <File FileName="Assets\Scripts\ScoreText.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BubbleSpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\JumpBar.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ExitGame.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Stick.cs" Line="12" Column="3" />
+      <File FileName="Assets\Scripts\StickSpawner.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
