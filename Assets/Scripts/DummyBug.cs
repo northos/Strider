@@ -2,8 +2,6 @@
 using System.Collections;
 
 public class DummyBug : MonoBehaviour {
-	public Sprite jumpSprite;
-	public Sprite stillSprite;
 	public float jumpForce;
 	public float jumpDelayMin;
 	public float jumpDelayMax;
@@ -11,12 +9,17 @@ public class DummyBug : MonoBehaviour {
 	public float minRotate;
 	float jumpDelay;
 	float jumpTimer;
+	float jumpThreshold;
 	float rotation;
 	bool rotateClockwise;
+	Animator animator;
+	float JUMP_END = .2f;
 
 	// initialize
 	void Start () {
 		pickParameters ();
+		animator = GetComponent<Animator> ();
+		jumpThreshold = (jumpDelayMax + jumpDelayMin) / 2 - JUMP_END;
 	}
 
 	// this bug will continually do the following:
@@ -29,9 +32,9 @@ public class DummyBug : MonoBehaviour {
 	void Update () {
 		// update timer
 		jumpTimer = Mathf.Max (0f, jumpTimer - Time.deltaTime);
-		// return to normal sprite when timer is almost up
-		if (jumpTimer <= .2f)
-			GetComponent<SpriteRenderer> ().sprite = stillSprite;
+		// return to normal sprite when enough time has passed (when average timer would have .2s left, or current timer has .2s left)
+		if (jumpDelay - jumpTimer >= jumpThreshold || jumpTimer <= JUMP_END)
+			animator.SetBool ("Jumping", false);;
 		// rotate as chosen
 		transform.Rotate(new Vector3 (0f, 0f, rotation));
 		// jump once the time runs out
@@ -39,7 +42,7 @@ public class DummyBug : MonoBehaviour {
 			Vector2 jumpVector = (Vector2)transform.up;
 			jumpVector = jumpVector.normalized * jumpForce;
 			GetComponent<Rigidbody2D>().AddForce(jumpVector);
-			GetComponent<SpriteRenderer> ().sprite = jumpSprite;
+			animator.SetBool ("Jumping", true);
 			pickParameters ();
 		}
 	}

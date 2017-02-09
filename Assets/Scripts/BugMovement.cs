@@ -5,12 +5,10 @@ using UnityStandardAssets.CrossPlatformInput;
 [RequireComponent(typeof(Rigidbody2D))]
 
 public class BugMovement : MonoBehaviour {
-	public Sprite jumpSprite;
-	public Sprite stillSprite;
-	public Sprite splatSprite;
 	public GameObject diedText;
 	public GameObject sticksText;
 	public GameObject menuButton;
+	Animator animator;
 	public float jumpForce;
 	public float jumpDelay;
 	public float superJumpForce;
@@ -19,12 +17,14 @@ public class BugMovement : MonoBehaviour {
 	public float superJumpTimer;
 	public int score;
 	public float deathHeight;
+	float JUMP_END = .1f;
 
 	// initialize score and jump cooldowns
 	void Start () {
 		jumpTimer = 0f;
 		superJumpTimer = superJumpDelay;
 		score = 0;
+		animator = GetComponent<Animator> ();
 	}
 
 	// update jump cooldown with passage of time
@@ -45,8 +45,8 @@ public class BugMovement : MonoBehaviour {
 		superJumpTimer = Mathf.Max (superJumpTimer - Time.deltaTime, 0f);
 
 		// update return sprite to default when player can almost jump again
-		if (jumpTimer <= .1f)
-			GetComponent<SpriteRenderer> ().sprite = stillSprite;
+		if (jumpTimer <= JUMP_END)
+			animator.SetBool("Jumping", false);
 
 		// jump when mouse is clicked, as long as cooldown isn't active
 		// change sprite to jumping sprite and start cooldown timer
@@ -54,7 +54,7 @@ public class BugMovement : MonoBehaviour {
 			Vector2 jumpVector = (Vector2)(mouseLocation - transform.position);
 			jumpVector = jumpVector.normalized * jumpForce;
 			GetComponent<Rigidbody2D>().AddForce(jumpVector);
-			GetComponent<SpriteRenderer> ().sprite = jumpSprite;
+			animator.SetBool ("Jumping", true);
 			jumpTimer = jumpDelay;
 		}
 			
@@ -65,7 +65,7 @@ public class BugMovement : MonoBehaviour {
 			Vector2 jumpVector = (Vector2)(mouseLocation - transform.position);
 			jumpVector = jumpVector.normalized * superJumpForce;
 			GetComponent<Rigidbody2D>().AddForce(jumpVector);
-			GetComponent<SpriteRenderer> ().sprite = jumpSprite;
+			animator.SetBool ("Jumping", true);
 			jumpTimer = jumpDelay;
 			superJumpTimer = superJumpDelay;
 		}
@@ -82,6 +82,6 @@ public class BugMovement : MonoBehaviour {
 		diedText.SetActive (true);
 		sticksText.SetActive (stickHit);
 		menuButton.SetActive (true);
-		GetComponent<SpriteRenderer> ().sprite = splatSprite;
+		animator.SetBool ("Dead", true);
 	}
 }
