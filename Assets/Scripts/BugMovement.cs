@@ -30,6 +30,11 @@ public class BugMovement : MonoBehaviour {
 	// update jump cooldown with passage of time
 	// check for jump input and jump if pressed
 	void Update () {
+		// once bug is dead, do nothing on update
+		if (animator.GetBool ("Dead")) {
+			return;
+		}
+
 		// if the bug has fallen too far below the bottom of the screen, end the game
 		if (transform.position.y < deathHeight) {
 			endGame (false);
@@ -78,7 +83,6 @@ public class BugMovement : MonoBehaviour {
 
 	// public function to end game upon hitting a stick (indicated by the bool argument) or falling off the screen
 	public void endGame(bool stickHit) {
-		Time.timeScale = 0;
 		diedText.SetActive (true);
 		sticksText.SetActive (stickHit);
 		menuButton.SetActive (true);
