@@ -1,11 +1,11 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{F28DC446-52F9-8B19-8F83-60C675952421}") = "Strider", "Assembly-CSharp-firstpass.csproj", "{EB22330F-EE89-1B5F-0CF0-E9CB7DA00945}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strider", "Assembly-CSharp-firstpass.csproj", "{EB22330F-EE89-1B5F-0CF0-E9CB7DA00945}"
 EndProject
-Project("{F28DC446-52F9-8B19-8F83-60C675952421}") = "Strider", "Assembly-CSharp.csproj", "{94830739-5031-C716-4888-24A42445635B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strider", "Assembly-CSharp.csproj", "{94830739-5031-C716-4888-24A42445635B}"
 EndProject
-Project("{F28DC446-52F9-8B19-8F83-60C675952421}") = "Strider", "Assembly-CSharp-Editor.csproj", "{BF3B1D85-BBE2-F1F1-C8C8-8065121F9F4E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strider", "Assembly-CSharp-Editor.csproj", "{BF3B1D85-BBE2-F1F1-C8C8-8065121F9F4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
