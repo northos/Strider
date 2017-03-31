@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BugMovement.cs">
     <Files>
-      <File FileName="Assets\Scripts\BugMovement.cs" Line="94" Column="85" />
+      <File FileName="Assets\Scripts\BugMovement.cs" Line="42" Column="20" />
       <File FileName="Assets\Scripts\DummyBug.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Bubble.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\SceneTransition.cs" Line="1" Column="1" />
@@ -12,10 +12,10 @@
       <File FileName="Assets\Scripts\ExitGame.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Stick.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\StickSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GravityController.cs" Line="11" Column="40" />
+      <File FileName="Assets\Scripts\GravityController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\HBubbleSpawner.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\HStickSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\HighScoreText.cs" Line="15" Column="75" />
+      <File FileName="Assets\Scripts\HighScoreText.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

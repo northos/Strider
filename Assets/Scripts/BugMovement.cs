@@ -17,7 +17,8 @@ public class BugMovement : MonoBehaviour {
 	float jumpTimer;
 	public float superJumpTimer;
 	public int score;
-	public float deathHeight;
+	public float deathRangeX;
+	public float deathRangeY;
 	float JUMP_END = .1f;
 
 	// initialize score and jump cooldowns
@@ -36,8 +37,11 @@ public class BugMovement : MonoBehaviour {
 			return;
 		}
 
-		// if the bug has fallen too far below the bottom of the screen, end the game
-		if (transform.position.y < deathHeight) {
+		// if the bug has fallen too far off the screen, end the game
+		if (Mathf.Abs(transform.position.x) >= deathRangeX) {
+			endGame (false);
+		}
+		if (Mathf.Abs(transform.position.y) >= deathRangeY) {
 			endGame (false);
 		}
 
