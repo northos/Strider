@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
 
@@ -87,5 +88,12 @@ public class BugMovement : MonoBehaviour {
 		sticksText.SetActive (stickHit);
 		menuButton.SetActive (true);
 		animator.SetBool ("Dead", true);
+
+		// update high scores as appropriate
+		if (!(PlayerPrefs.HasKey (SceneManager.GetActiveScene ().name + "HS")) || score > PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "HS")) {
+			// update score as long as no score exists, or new score is higher than old score
+			PlayerPrefs.SetInt (SceneManager.GetActiveScene ().name + "HS", score);
+			PlayerPrefs.Save ();
+		}
 	}
 }
