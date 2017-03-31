@@ -51,6 +51,9 @@
      <Compile Include="Assets\Scripts\BugMovement.cs" />
      <Compile Include="Assets\Scripts\DummyBug.cs" />
      <Compile Include="Assets\Scripts\ExitGame.cs" />
+     <Compile Include="Assets\Scripts\GravityController.cs" />
+     <Compile Include="Assets\Scripts\HBubbleSpawner.cs" />
+     <Compile Include="Assets\Scripts\HStickSpawner.cs" />
      <Compile Include="Assets\Scripts\JumpBar.cs" />
      <Compile Include="Assets\Scripts\SceneTransition.cs" />
      <Compile Include="Assets\Scripts\ScoreText.cs" />
